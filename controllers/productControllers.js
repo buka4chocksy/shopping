@@ -1,6 +1,5 @@
 var model = require('../models/product');
-var multer = require('multer');
-var upload = multer({dest:'/uploads/'});
+
 
 exports.addProduct = function(req,res) {
 
