@@ -1,4 +1,5 @@
 var model = require('../models/product');
+var multer = require('multer');
 
 exports.addProduct = function(req,res) {
 
