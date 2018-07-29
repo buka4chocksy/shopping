@@ -1,23 +1,5 @@
 var model = require('../models/product');
 
-
-exports.addProduct = function(req,res) {
-
-    var data ={
-        productname:req.body.productname,
-        price:req.body.price,
-        quantity:req.body.quantity,
-        time:Date.now()
-
-    }
-    model.create(data , function(err){
-        if(err) res.json({err:err,message:'Error Adding Products'});
-        res.json({message:'Product Added Successfully'});
-
-    })
-
-}
-
 exports.deleteProduct = function(req,res){
     var product_id = {_id:req.body.product_id}
     model.findByIdAndRemove(product_id, function(err){
