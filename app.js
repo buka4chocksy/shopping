@@ -22,6 +22,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use('/uploads',express.static('uploads'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.promise = global.promise;
