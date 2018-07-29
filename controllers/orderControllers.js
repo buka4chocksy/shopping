@@ -36,3 +36,12 @@ exports.deleteOrder = function(req,res){
         res.json({message:'Order Deleted Successful'})
     })
 }
+exports.viewOrder = function (req, res){
+    models.find({}, function(err , data){
+        if(err) res.json({err:err, message:'error fetching order'});
+        res.json({data});
+
+    })
+}
+
+
