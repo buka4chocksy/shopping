@@ -15,8 +15,17 @@ var storage = multer.diskStorage({
 })
 //the limts aids in determining the limits of file size you can upload
 var upload = multer({storage:storage , limits:{
+    fileSize: 1024 * 1024 * 5
 
 }});
+var filter = function(req,file,cb){
+    if(file.mimetype === 'image/jpg' || file.mimetype === 'image/png'){
+        cb(null, true);
+    }else{
+        cb(null, false);
+    }
+
+}
 
  
 router.post('/create', upload.single('image'), function(req,res){
